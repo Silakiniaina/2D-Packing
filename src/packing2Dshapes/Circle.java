@@ -1,4 +1,3 @@
-// File: src/packing2DShapes/Circle.java
 package packing2Dshapes;
 
 public class Circle extends Shape {

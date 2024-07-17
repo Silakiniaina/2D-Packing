@@ -1,4 +1,3 @@
-// File: src/packing2DShapes/Shape.java
 package packing2Dshapes;
 
 public abstract class Shape {
