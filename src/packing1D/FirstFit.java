@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FirstFit {
+
+    /* --------- Function to pack a list of item using the firstFit algo -------- */
     public static List<Bin> pack(List<Item> items, double binCapacity) {
         List<Bin> bins = new ArrayList<>();
 
