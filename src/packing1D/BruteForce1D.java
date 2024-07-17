@@ -7,6 +7,17 @@ public class BruteForce1D{
     private static List<Bin> bestSolution;
     private static int minBins;
 
+    /* ---------------------------- Function to pack ---------------------------- */
+    public static List<Bin> pack(List<Item> items, double binCapacity) {
+        bestSolution = null;
+        minBins = Integer.MAX_VALUE;
+        
+        List<Bin> currentSolution = new ArrayList<>();
+        packRecursive(items, 0, currentSolution, binCapacity);
+        
+        return bestSolution;
+    }
+
     /* ----------------- Function to pack recurcively the items ----------------- */
     private static void packRecursive(List<Item> items, int index, List<Bin> currentSolution, double binCapacity) {
         if (index == items.size()) {
