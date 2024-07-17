@@ -1,13 +1,20 @@
+// File: src/packing2D/NFDH.java
 package packing2D;
 
-import java.util.List;
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.List;
 
 public class NFDH {
+    private double containerWidth;
+    private double containerHeight;
 
-    /* ------------------------- Algo to pack using NFDH ------------------------ */
-    public static List<Rectangle> pack(List<Rectangle> rectangles, double containerWidth, double containerHeight) {
+    public NFDH(double containerWidth, double containerHeight) {
+        this.containerWidth = containerWidth;
+        this.containerHeight = containerHeight;
+    }
+
+    public List<Rectangle> pack(List<Rectangle> rectangles) {
         List<Rectangle> packedRectangles = new ArrayList<>();
         
         // Sort rectangles by height in descending order
