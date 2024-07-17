@@ -6,7 +6,15 @@ import java.util.Comparator;
 import java.util.List;
 
 public class FFDH {
-    public static List<Rectangle> pack(List<Rectangle> rectangles, double containerWidth, double containerHeight) {
+    private double containerWidth;
+    private double containerHeight;
+
+    public FFDH(double containerWidth, double containerHeight) {
+        this.containerWidth = containerWidth;
+        this.containerHeight = containerHeight;
+    }
+
+    public List<Rectangle> pack(List<Rectangle> rectangles) {
         List<Rectangle> packedRectangles = new ArrayList<>();
         
         // Sort rectangles by height in descending order
@@ -40,7 +48,7 @@ public class FFDH {
         return packedRectangles;
     }
 
-    private static class Level {
+    private class Level {
         private double width;
         private double y;
         private double height;
