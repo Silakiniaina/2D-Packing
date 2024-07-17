@@ -1,12 +1,19 @@
+// File: src/packing2D/BestFit2D.java
 package packing2D;
 
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 public class BestFit2D {
-    
-    /* ------------------ packing using the bestFit of 2d algo ------------------ */
-    public static List<Rectangle> pack(List<Rectangle> rectangles, double containerWidth, double containerHeight) {
+    private double containerWidth;
+    private double containerHeight;
+
+    public BestFit2D(double containerWidth, double containerHeight) {
+        this.containerWidth = containerWidth;
+        this.containerHeight = containerHeight;
+    }
+
+    public List<Rectangle> pack(List<Rectangle> rectangles) {
         List<Rectangle> packedRectangles = new ArrayList<>();
         List<Rectangle> gaps = new ArrayList<>();
         gaps.add(new Rectangle(containerWidth, containerHeight));
