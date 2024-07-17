@@ -1,5 +1,4 @@
 
-// File: src/packing2DShapes/Rectangle2D.java
 package packing2Dshapes;
 
 public class Rectangle2D extends Shape {
