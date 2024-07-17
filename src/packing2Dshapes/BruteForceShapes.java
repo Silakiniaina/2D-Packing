@@ -3,8 +3,6 @@ package packing2Dshapes;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.swing.text.Position;
-
 public class BruteForceShapes {
     private double containerWidth;
     private double containerHeight;
