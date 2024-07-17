@@ -16,6 +16,33 @@ public class BruteForce2D {
         this.bestUtilization = 0;
     }
 
+    public List<Rectangle> pack(List<Rectangle> rectangles) {
+        List<Rectangle> currentSolution = new ArrayList<>();
+        packRecursive(rectangles, 0, currentSolution);
+        return bestSolution;
+    }
+
+    private void packRecursive(List<Rectangle> rectangles, int index, List<Rectangle> currentSolution) {
+        if (index == rectangles.size()) {
+            double utilization = calculateUtilization(currentSolution);
+            if (utilization > bestUtilization) {
+                bestUtilization = utilization;
+                bestSolution = new ArrayList<>(currentSolution);
+            }
+            return;
+        }
+
+        Rectangle currentRect = rectangles.get(index);
+        List<Position> possiblePositions = findPossiblePositions(currentSolution, currentRect);
+
+        for (Position pos : possiblePositions) {
+            currentRect.setPosition(pos.x, pos.y);
+            currentSolution.add(currentRect);
+            packRecursive(rectangles, index + 1, currentSolution);
+            currentSolution.remove(currentSolution.size() - 1);
+        }
+    }
+
     private List<Position> findPossiblePositions(List<Rectangle> placedRectangles, Rectangle newRect) {
         List<Position> positions = new ArrayList<>();
         positions.add(new Position(0, 0)); // Always try top-left corner
