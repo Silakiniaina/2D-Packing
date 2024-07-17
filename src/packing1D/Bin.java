@@ -15,6 +15,16 @@ public class Bin {
         this.setItems(new ArrayList<>());
     }
 
+    /* ------------------ Function to add an item into the bin ------------------ */
+    public boolean addItem(Item item) {
+        if (item.getSize() <= remainingSpace) {
+            items.add(item);
+            remainingSpace -= item.getSize();
+            return true;
+        }
+        return false;
+    }
+
     /* --------------------------------- Getters -------------------------------- */
     public double getCapacity() {
         return capacity;
