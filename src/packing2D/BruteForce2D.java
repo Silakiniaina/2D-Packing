@@ -89,6 +89,4 @@ public class BruteForce2D {
             this.y = y;
         }
     }
-
-
 }

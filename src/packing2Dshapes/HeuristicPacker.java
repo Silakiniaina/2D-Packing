@@ -1,4 +1,3 @@
-// File: src/packing2DShapes/HeuristicPacker.java
 package packing2Dshapes;
 
 import java.util.ArrayList;
